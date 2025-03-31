@@ -1,0 +1,26 @@
+{% load static %}
+<div class="row header__container align-items-center">
+    <div class="col-md-4">
+        <img src="{% static 'img/impactsure-logo.png' %}" class="impactsure_img" alt="Impactsure Logo" width="100" height="100">
+    </div>
+    <div class="col-md-4">
+        <p class="header_center">Corporate Banking Application</p>
+    </div>
+    <div class="col-md-4 d-flex align-items-center">
+        <div class="toggle_section">
+             <button class="toggle_button_bullhorn" aria-label="Notification">
+                  <img src="{% static 'img/ReDesign.gif' %}" class="speaker_icon" alt="speaker_icon" width="100" height="100">
+             </button>
+             <button class="toggle_button_on" aria-label="Settings" onclick="toggleSidebar()">
+                 <i class="fa-regular fa-sidebar toggle_on_icon"></i>
+                 <!-- <i class="fa-regular fa-toggle-off "></i>-->
+            </button>
+            <!--<button class="toggle_button_on" aria-label="Toggle Theme" onclick="toggleTheme()">
+                <i class="fa-regular fa-moon toggle_icon"></i>
+            </button>-->
+        </div>
+    </div>
+</div>
+
+
+

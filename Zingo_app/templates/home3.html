@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% load static %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Zingo</title>
+      <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'vendor/fontawesome-pro/css/all.min.css' %}">
+      <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'js/home.js' %}"></script>
+      <script src="{% static 'js/slide.js' %}"></script>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+      <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+      <script src="{% static 'js/slick.min.js' %}"></script>
+   </head>
+   <body id="page-top">
+      <div class="container-fluid">
+         {% include 'fragments/header.html' %}
+         <div id="sidebar" class="sidebar">
+            <div class="sidebar__header">
+               <p class="sidebar_content">First last name</p>
+               <i class="fa-regular fa-user" style="font-size: 28px;"></i>
+            </div>
+            <div class="sidebar__previous__content">
+               <div class="sidebar__previous__content___text">Previous chats and follow-ups</div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">BG Number XXXX Document...</p>
+                  <p class="followup__time">3:36pm</p>
+               </div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">LC Number XXXX pending...</p>
+                  <p class="followup__time">yesterday</p>
+               </div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">BG Draft</p>
+                  <p class="followup__time">yesterday</p>
+               </div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">Why is this a bank onerous?</p>
+                  <p class="followup__time">2 days ago</p>
+               </div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">What amount is the LC no.XXXX</p>
+                  <p class="followup__time">9 days ago</p>
+               </div>
+               <div class="sidebar___followup__text">
+                  <p class="followup__text">Take a follow-up of your LC</p>
+                  <p class="followup__time">12 days ago</p>
+               </div>
+               <div class="see__more">
+                  <a href="#">See more</a>
+               </div>
+               <div class="sidebar__footer">
+                  <div>
+                     <p><i class="fa-regular fa-comment"></i>Feedback?</p>
+                  </div>
+                  <div>
+                     <p><i class="fa-regular fa-question-circle"></i>FAQs?</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card___container">
+            <div class="slick-slider-container">
+               <div class="slick-slide">
+                  <div class="slick__slider__one">
+                     <div class="row card_row mt-5 mb-2">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">BG Issuance</div>
+                           <p class="card_text">Using Beneficiary BG Text</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" id="bg-upload-input" placeholder="Upload the BG Text" readonly>
+                              <input type="file" id="bg-upload-file" style="display: none;">
+                              <button class="btn btn-outline-secondary upload-btn" id="bg-upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">BG Amendment</div>
+                           <div class="input-group outward__remittance__box mb-3">
+                              <input type="text" class="form-control" id="bg-amendment-input" placeholder="BG NO.">
+                              <button class="btn btn-outline-secondary input-arrow" id="bg-amendment-submit">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">LC Amendment</div>
+                           <div class="input-group outward__remittance__box mb-3">
+                              <input type="text" class="form-control" id="lc-amendment-input" placeholder="LC NO.">
+                              <button class="btn btn-outline-secondary input-arrow" id="lc-amendment-submit">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row card_row mt-3">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">LC Issuance</div>
+                           <p class="card_text">Create LC from issued LC</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="LC NO.">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">LC Issuance</div>
+                           <p class="card_text">Create LC from Template</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="Template ID">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">LC Bills</div>
+                           <p class="card_text">Bills Presentation</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="Upload the Bills">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="slick-slide">
+                  <div class="slick__slider__two">
+                     <div class="row card_row mt-5 mb-2">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Outward Remittance</div>
+                           <p class="card_text">Create A1 Form</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="create the form">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Outward Remittance</div>
+                           <p class="card_text">Create A2 Form</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="Create the form">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Outward Remittance</div>
+                           <div class="input-group lc__bills__input mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row card_row mt-3 mb-2">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Inward Remittance</div>
+                           <div class="input-group lc__bills__input mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Inward Remittance</div>
+                           <p class="card_text">Disposal for exports MT 202</p>
+                           <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Inward Remittance</div>
+                           <p class="card_text">Shipping bill regulation</p>
+                           <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="slick-slide">
+                  <div class="slick__slider__three">
+                     <div class="row card_row mt-5 mb-2">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Smart LC</div>
+                           <p class="card_text_new">Create LC through SmartLC Wizard</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="LC NO.">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Export - EDPMS</div>
+                           <p class="card_text">EDPMS - Bill Blocking</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="Upload the Bills">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Export</div>
+                           <p class="card_text">Bills Discounting</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="Upload the Bills">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row card_row mt-3 mb-2">
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">ForeEx</div>
+                           <p class="card_text">FX Confirmation</p>
+                           <div class="input-group lc__bills__input__new mb-3">
+                              <input type="text" class="form-control" placeholder="FX Request Number">
+                              <button class="btn btn-outline-secondary input-arrow">
+                                 <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                              </button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Import</div>
+                           <p class="card_text">BOE Settlement</p>
+                           <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                        <div class="card shadow-sm lc_card">
+                           <div class="card_title">Import</div>
+                           <p class="card_text">IDPMS Payment</p>
+                           <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Upload file to view">
+                              <button class="btn btn-outline-secondary upload-btn"><i class="fa-regular fa-upload"></i></button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row search__row">
+            <div class="d-flex align-items-center mt-5 mb-4 search__row__container">
+               <img src="{% static 'img/Zingo_logo.png' %}" class="info_icon me-2" id="info-icon" alt="info_icon" width="100" height="100">
+               <div class="search-container d-flex align-items-center">
+                  <div class="placeholder-wrapper">
+                     <input type="text" class="search-bar" id="chat-input" placeholder="">
+                     <div class="placeholder-carousel">
+                        <span class="placeholder-item">Hi, This is Zingo (Agentic AI). How can I help you?</span>
+                        <span class="placeholder-item">Hi, Do you need any help in creating BG?</span>
+                        <span class="placeholder-item">Hi, Do you need any help in creating BG?</span>
+                        <span class="placeholder-item">Do you need any help regarding LC?</span>
+                        <span class="placeholder-item">Do you need any help regarding BG?</span>
+                     </div>
+                  </div>
+                  <button class="input-arrow" id="chat-submit">
+                     <img src="{% static 'img/send-icon.png' %}" class="send__icon" alt="send__icon" width="100" height="100">
+                  </button>
+                  <button class="btn btn-outline-secondary mic-btn" id="mic-btn"><i class="fa-regular fa-microphone"></i></button>
+                  <button class="btn btn-outline-secondary lang-toggle-btn" id="lang-toggle-btn">English</button>
+               </div>
+            </div>
+         </div>
+         <div class="row chat__row">
+            <div class="chat-output" id="chat-output">
+               <p><strong>Zingo:</strong> Hey! Good to see you. What’s up today?</p>
+            </div>
+         </div>
+         <div class="info_dropdown" id="info-dropdown">
+            <div>
+               <ul id="main-menu">
+                  <li onclick="showImportList()">Import</li>
+                  <li onclick="showExportList()">Export</li>
+                  <li>Letter of Credit</li>
+                  <li>Bank Guarantee</li>
+                  <li onclick="showOutwardList()">Outward Remittance</li>
+                  <li onclick="showInwardList()">Inward Remittance</li>
+                  <li onclick="showCapitalList()">Capital Account</li>
+                  <li onclick="showForexList()">Forex</li>
+               </ul>
+            </div>
+         </div>
+         <div id="import-list" class="info_dropdown__import hidden">
+            <p>Import</p>
+            <ul>
+               <li>Other Bank BOE (Bill Utilisation)</li>
+               <li>GT / PO</li>
+               <li>DRUL</li>
+               <li>Document Return</li>
+               <li>AD Transfer & Pay</li>
+               <li>Buyer Credit – Roll over</li>
+               <li>Buyer Credit – Repayment</li>
+               <li>Quote Management</li>
+               <li>Merchant Trade</li>
+               <li>Bill Acceptance</li>
+               <li>Bill Payment</li>
+               <li>BOE Settlement</li>
+               <li>Buyer Credit</li>
+               <li>IDPMS Payment</li>
+            </ul>
+         </div>
+         <div id="export-list" class="info_dropdown__import hidden">
+            <p class="list__p">Export</p>
+            <ul>
+               <li>EDPMS - Bill Blocking</li>
+               <li>EDPMS - Bill Regularization</li>
+               <li>Export Bill Dispatch</li>
+               <li>Export Bill Reconciliation</li>
+               <li>Bill Discounting</li>
+               <li>IDPMS</li>
+               <li>Service Expert</li>
+               <li>Extension of Invoice</li>
+               <li>Document Tracking</li>
+               <li>EEFC conversion</li>
+               <li>Pre Shipment Loan</li>
+               <li>GR Waiver</li>
+               <li>GR Closer</li>
+               <li>Software Export Life Cycle</li>
+            </ul>
+         </div>
+         <div id="lc-list" class="info_dropdown__import hidden">
+            <p class="list__p">LC</p>
+            <ul>
+               <li>Issuance</li>
+               <li>Cancellation</li>
+               <li>Amendments</li>
+               <li>Advising</li>
+               <li>Wooqer</li>
+               <li>Retail LC</li>
+               <li>LC Utility</li>
+            </ul>
+         </div>
+         <div id="bg-list" class="info_dropdown__import hidden">
+            <p class="list__p">BG</p>
+            <ul>
+               <li>BG issuance</li>
+               <li>BG vetting</li>
+               <li>BG amendment</li>
+               <li>BG cancellation</li>
+               <li>BG innovation</li>
+               <li>BG utility and Wooqer</li>
+               <li>BG confirmation</li>
+            </ul>
+         </div>
+         <div id="outward-list" class="info_dropdown__import hidden">
+            <p class="list__p">Outward Remittance</p>
+            <ul>
+               <li>A1 Remittance</li>
+               <li>A2 Remittance</li>
+               <li>Agency commission</li>
+               <li>BOE mapping</li>
+               <li>Swift GPT</li>
+               <li>ODI/FDI Remittance mapping</li>
+               <li>EDPMS Mapping agency commission</li>
+            </ul>
+         </div>
+         <div id="inward-list" class="info_dropdown__import hidden">
+            <p class="list__p">Inward Remittance</p>
+            <ul>
+               <li>Disposal for exports MT 202</li>
+               <li>Disposal for Non-exports MT 103</li>
+               <li>Shipping bill regulation</li>
+               <li>FX rates</li>
+               <li>FD/ODI linkage</li>
+            </ul>
+         </div>
+         <div id="capital-list" class="info_dropdown__import hidden">
+            <p class="list__p">Capital Account</p>
+            <ul>
+               <li>ODI</li>
+               <li>FDI</li>
+               <li>ECB</li>
+               <li>LO/PO/BO</li>
+               <li>OBR</li>
+               <li>Commodity hedging</li>
+               <li>RBI Pravaah</li>
+               <li>IRM and ORM Management</li>
+               <li>Document Submission Dashboard</li>
+               <li>Fee/late Submission Collection</li>
+            </ul>
+         </div>
+         <div id="forex-list" class="info_dropdown__import hidden">
+            <p class="list__p">ForeX</p>
+            <ul>
+               <li>FX confirmation</li>
+               <li>FX underlying submission</li>
+               <li>Online Rate Booking</li>
+               <li>Shipping bill and BOE linkage for underlying</li>
+               <li>Acceptance and Refusal</li>
+            </ul>
+         </div>
+      </div>
+      <script>
+         $(document).ready(function() {
+            let languagePreference = 'auto'; // Default to dynamic detection
+
+            $('#chat-submit').click(function() {
+               sendMessage();
+            });
+            $('#chat-input').keypress(function(e) {
+               if (e.which == 13) {
+                  sendMessage();
+               }
+            });
+
+            function sendMessage() {
+               var message = $('#chat-input').val().trim();
+               if (!message) return;
+               $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+               $('#chat-input').val('');
+               processRequest(message);
+            }
+
+            $('#bg-amendment-submit').click(function() {
+               sendBgAmendment();
+            });
+            $('#bg-amendment-input').keypress(function(e) {
+               if (e.which == 13) {
+                  sendBgAmendment();
+               }
+            });
+
+            function sendBgAmendment() {
+               var bgNumber = $('#bg-amendment-input').val().trim();
+               if (!bgNumber) return;
+               var message = 'amend BG ' + bgNumber;
+               $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+               $('#bg-amendment-input').val('');
+               processRequest(message);
+            }
+
+            $('#lc-amendment-submit').click(function() {
+               sendLcAmendment();
+            });
+            $('#lc-amendment-input').keypress(function(e) {
+               if (e.which == 13) {
+                  sendLcAmendment();
+               }
+            });
+
+            function sendLcAmendment() {
+               var lcNumber = $('#lc-amendment-input').val().trim();
+               if (!lcNumber) return;
+               var message = lcNumber; // Directly use LC number to trigger lc_view
+               $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+               $('#lc-amendment-input').val('');
+               processRequest(message);
+            }
+
+            $('#bg-upload-btn').click(function() {
+               $('#bg-upload-file').click();
+            });
+
+            $('#bg-upload-file').change(function() {
+               var file = this.files[0];
+               if (!file) return;
+               $('#bg-upload-input').val(file.name);
+               var formData = new FormData();
+               formData.append('file', file);
+               $.ajax({
+                  url: "{% url 'chat' %}",
+                  method: 'POST',
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                  success: function(data) {
+                     $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
+                     $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+                  },
+                  error: function(xhr) {
+                     $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
+                  }
+               });
+            });
+
+            // Speech Recognition
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            $('#mic-btn').click(function() {
+               recognition.lang = languagePreference === 'hindi' ? 'hi-IN' : 'en-US';
+               $('#mic-btn').html('<i class="fa-regular fa-microphone" style="color: red;"></i>');
+               recognition.start();
+            });
+
+            recognition.onresult = function(event) {
+               const transcript = event.results[0][0].transcript;
+               $('#chat-input').val(transcript);
+               $('#chat-output').append('<p><strong>You (Speech):</strong> ' + transcript + '</p>');
+               $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+               processRequest(transcript);
+            };
+
+            recognition.onerror = function(event) {
+               $('#chat-output').append('<p><strong>Error:</strong> Speech recognition error: ' + event.error + '</p>');
+               $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+            };
+
+            recognition.onend = function() {
+               $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+            };
+
+            // Language Toggle
+            $('#lang-toggle-btn').click(function() {
+               if (languagePreference === 'auto' || languagePreference === 'english') {
+                  languagePreference = 'hindi';
+                  $('#lang-toggle-btn').text('Hindi');
+                  $('#chat-output').html('<p><strong>Zingo:</strong> नमस्ते! आपसे मिलकर अच्छा लगा। आज क्या करना चाहते हैं?</p>');
+               } else {
+                  languagePreference = 'english';
+                  $('#lang-toggle-btn').text('English');
+                  $('#chat-output').html('<p><strong>Zingo:</strong> Hey! Good to see you. What’s up today?</p>');
+               }
+               $.ajax({
+                  url: "{% url 'chat' %}",
+                  method: 'POST',
+                  data: JSON.stringify({ message: 'set_language_' + languagePreference }),
+                  contentType: 'application/json',
+                  headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                  success: function(data) {
+                     console.log('Language preference updated');
+                  }
+               });
+            });
+
+            function processRequest(message) {
+               if (message.startsWith('set_language_')) {
+                  return; // Handled by toggle
+               }
+               $.ajax({
+                  url: "{% url 'chat' %}",
+                  method: 'POST',
+                  data: JSON.stringify({ message: message }),
+                  contentType: 'application/json',
+                  headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                  success: function(data) {
+                     $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
+                     if (data.redirect) {
+                        if (data.process_file) {
+                           showFileProcessingProgress(data.url);
+                        } else {
+                           showProgressBar(data.url);
+                        }
+                     }
+                     $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+                  },
+                  error: function(xhr) {
+                     $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
+                  }
+               });
+            }
+
+            function showProgressBar(url) {
+               var progressBar = '<div id="progress-bar" class="progress mt-2">' +
+                                 '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%"></div>' +
+                                 '</div>';
+               $('#chat-output').append(progressBar);
+               $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+               var width = 0;
+               var interval = setInterval(function() {
+                  width += 20;
+                  $('#progress-bar .progress-bar').css('width', width + '%');
+                  if (width >= 100) {
+                     clearInterval(interval);
+                     setTimeout(function() {
+                        $('#progress-bar').remove();
+                        window.open(url, '_blank');
+                     }, 500);
+                  }
+               }, 500);
+            }
+
+            function showFileProcessingProgress(initialUrl) {
+               var progressBar = '<div id="progress-bar" class="progress mt-2">' +
+                                 '<div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%"></div>' +
+                                 '</div>';
+               $('#chat-output').append(progressBar);
+               $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+               setTimeout(function() {
+                  $('#progress-bar').remove();
+                  window.open(initialUrl, '_blank');
+               }, 5000); // Adjust based on API response time
+            }
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,55 @@
+{
+    "urls": {
+        "static": {
+            "bank guarantee": "http://35.200.190.92:7443/surematch/live-preview?id=",
+            "letter of credit": "http://34.47.189.253:9001/importlc/create-ticket-page"
+        },
+        "dynamic": {
+            "view_bg": {
+                "base_url": "http://35.244.6.162:7443/surematch/live-preview?id=",
+                "triggers": ["i want to view my bg", "make bg from existing", "generate bg with id", "set up bg with number", "help me with existing bg"]
+            },
+            "bg_creation_with_file": {
+                "base_url": "http://127.0.0.1:7443/surematch/api/processBgfile",
+                "triggers": ["create a new bg", "make a new bg","make a new BG", "generate bg from file", "new bg from file", "i want to create a new bg", "can you create me a new bg", "set up a new bg", "help me with a new bg", "I want to issue a BG", "I want to issue a new BG"]
+            },
+            "lc_creation": {
+                "base_url": "http://34.47.189.253:9001/importlc/create-ticket-page",
+                "triggers": ["create lc", "make lc", "generate lc", "new lc", "i want to create an lc", "i want to new lc", "can you create me a lc", "set up a new lc", "I want to set up a new lc","help me with a lc","make a new lc", "create lc","I want to issue a LC","I want to issue a new LC","want to generate lc from file"]
+            },
+            "lc_view": {
+                "base_url": "http://34.47.189.253:9001/importlc/view-ticket/",
+                "triggers": ["i was working on this lc", "this is my lc number", "working on lc", "my lc is", "i have this lc", "looking at lc"]
+            },
+            "bg_amendment": {
+                "base_url": "http://35.244.6.162:7443/surematch/live-preview?id=",
+                "trigger": "amend bg"
+            }
+        }
+    },
+    "bg_mappings": {
+        "sm2503210002u": "5750",
+        "sm2503210001e": "5749",
+        "sm2503200009u": "5747",
+        "sm2503200007u": "5745",
+        "sm2503190009u": "5715"
+    },
+    "lc_mappings": {
+        "0010FLC210040": "1080"
+    },
+    "responses": {
+        "greeting": "Hey! Good to see you. What’s up today?",
+        "casual_hi": "Hi! How’s your day going so far? Anything I can help with?",
+        "casual_help": "Happy to jump in! What’s on your plate?",
+        "bg_prompt": "Alright, I’ve got your Bank Guarantee lined up. Hang tight, it’s opening in a new tab!",
+        "bg_file_prompt": "Cool, processing your BG file for a new applicant now. Give me a sec—it’ll open in a new tab soon!",
+        "lc_prompt": "Sweet, your Letter of Credit page is ready. Popping it open in a new tab!",
+        "lc_view_prompt": "Got it, pulling up your LC details in a new tab for you!",
+        "unclear": "I’m not quite catching your drift yet. What’s on your mind—maybe a BG or LC?",
+        "bg_suggestion": "Oh, are we talking about a Bank Guarantee? Is it for an existing one or a new applicant?",
+        "lc_suggestion": "Sounds like a Letter of Credit might be the thing. Are you starting a new one or checking an existing one?",
+        "number_prompt": "Nice! What’s the number for that one? Just drop it here.",
+        "follow_up": "Anything else you want to chat about or set up?"
+    }
+}
+
