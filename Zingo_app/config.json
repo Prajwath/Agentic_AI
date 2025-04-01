@@ -11,11 +11,11 @@
             },
             "bg_creation_with_file": {
                 "base_url": "http://127.0.0.1:7443/surematch/api/processBgfile",
-                "triggers": ["create a new bg", "make a new bg","make a new BG", "generate bg from file", "new bg from file", "i want to create a new bg", "can you create me a new bg", "set up a new bg", "help me with a new bg", "I want to issue a BG", "I want to issue a new BG"]
+                "triggers": ["create a new bg", "make a new bg","make a new BG", "generate bg from file", "new bg from file", "i want to create a new bg", "can you create me a new bg", "set up a new bg", "help me with a new bg", "I want to issue a BG", "I want to issue a new BG", "Zingo create me a new BG", "make a new bg","make a new BG", "create me a new BG"]
             },
             "lc_creation": {
                 "base_url": "http://34.47.189.253:9001/importlc/create-ticket-page",
-                "triggers": ["create lc", "make lc", "generate lc", "new lc", "i want to create an lc", "i want to new lc", "can you create me a lc", "set up a new lc", "I want to set up a new lc","help me with a lc","make a new lc", "create lc","I want to issue a LC","I want to issue a new LC","want to generate lc from file"]
+                "triggers": ["create lc", "make lc", "generate lc", "new lc", "i want to create an lc", "i want to new lc", "can you create me a lc", "set up a new lc", "I want to set up a new lc","help me with a lc","make a new lc", "create lc","I want to issue a LC","I want to issue a new LC","want to generate lc from file","create me a new LC","create LC", "make LC", "generate LC", "new LC", "i want to create a new LC", "i want to new LC"]
             },
             "lc_view": {
                 "base_url": "http://34.47.189.253:9001/importlc/view-ticket/",
@@ -24,6 +24,14 @@
             "bg_amendment": {
                 "base_url": "http://35.244.6.162:7443/surematch/live-preview?id=",
                 "trigger": "amend bg"
+            },
+            "lc_creation_with_file":{
+                "base_url": "http://34.47.189.253:9001/importlc/create-ticket-page",
+                "trigger": "for future use"
+            },
+            "lc_amendment": {
+                "base_url": "http://34.47.189.253:9001/importlc/view-ticket/",
+                "trigger": "amend lc"
             }
         }
     },

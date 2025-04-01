@@ -788,3 +788,142 @@ button.btn-outline-secondary {
     color: #6c757d !important;
 
 }
+
+
+
+.search__row{
+margin-top: 68px;
+}
+.search__row__container{
+    gap:99px;
+}
+.info_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px; /* Reduced for a sleek look */
+    height: 55px;
+    background-color:#57AEB3; /* Darker teal for a premium look */
+    color: #fff; /* White "i" */
+    font-size: 28px; /* Adjusted size */
+    border-radius: 50%; /* Makes it circular */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2),
+                inset -1px -1px 3px rgba(255, 255, 255, 0.15); /* Softer shadow */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    font-family: "Arial", sans-serif; /* Ensuring similar font */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Subtle scale and glow on hover */
+.info_icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px rgba(39, 137, 145, 0.5); /* Glow effect */
+}
+
+/* Active (Click) Effect */
+.info_icon:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Pulsating Effect */
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 8px rgba(39, 137, 145, 0.3);
+    }
+    50% {
+        box-shadow: 0px 0px 16px rgba(39, 137, 145, 0.5);
+    }
+    100% {
+        box-shadow: 0px 0px 8px rgba(39, 137, 145, 0.3);
+    }
+}
+
+/* Apply pulse animation */
+.info_icon.pulse {
+    animation: pulse 2s infinite;
+}
+
+
+/* Adjust FA icon inside */
+.info_icon::before {
+    font-weight: 900; /* Solid style */
+    line-height: 2; /* Fix positioning */
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 13px;
+    padding: 1px;
+    width: 67%;
+    background-color: #fff;
+}
+.placeholder-wrapper {
+    position: relative;
+    width: 100%;
+    height: 40px; /* Matches input height */
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Ensures extra placeholders are hidden */
+}
+
+.placeholder-carousel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: calc(100% - 20px); /* Ensures it fits within the input */
+    z-index: 1; /* Keeps it behind the input */
+    color: #999;
+    pointer-events: none; /* Allows input typing */
+}
+
+.placeholder-item {
+    font-size: 1.25rem;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+/* Improved scrolling effect with pauses */
+@keyframes verticalCarousel {
+    0%, 25% { transform: translateY(0); } /* Stay for 2.5s */
+    30%, 50% { transform: translateY(-40px); } /* Move up */
+    55%, 75% { transform: translateY(-80px); } /* Move up */
+    80%, 100% { transform: translateY(-120px); } /* Move up */
+}
+
+.placeholder-carousel {
+    animation: verticalCarousel 10s infinite ease-in-out;
+}
+
+.placeholder-hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.search-bar {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: transparent;
+    font-size: 24px;
+}
+.input-arrow {
+    border: none; /* Removes the border */
+    background: transparent;
+    font-size: 30px; /* Adjust arrow size if needed */
+    color: black;
+    padding: 5px 12px; /* Optional: adjust padding */
+}
+.send__icon{
+        width: 40px;
+    height: auto;
+}
+ 

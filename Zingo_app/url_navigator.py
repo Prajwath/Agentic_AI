@@ -20,6 +20,17 @@ class URLNavigator:
         bg_number = None
         lc_number = None
 
+        # Check for single-word input or direct LC number (e.g., from LC amendment input)
+        if len(words) == 1:
+            number = words[0]
+            if self.lc_num_regex.match(number):
+                if number in self.bg_mappings:
+                    return f"{self.dynamic_urls['view_bg']['base_url']}{self.bg_mappings[number]}", "view_bg"
+                elif number.lower() in self.lc_mappings_lower:
+                    return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[number.lower()]}", "lc_view"
+                else:
+                    return None, "invalid_ticket_number"
+
         # Check for "ticket" or "टिकट" followed by a potential number
         ticket_keywords = ["ticket", "टिकट"]
         for ticket_key in ticket_keywords:
@@ -30,23 +41,12 @@ class URLNavigator:
                     if self.lc_num_regex.match(potential_number):
                         if potential_number in self.bg_mappings:
                             return f"{self.dynamic_urls['view_bg']['base_url']}{self.bg_mappings[potential_number]}", "view_bg"
-                        elif potential_number in self.lc_mappings_lower:
-                            return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[potential_number]}", "lc_view"
+                        elif potential_number.lower() in self.lc_mappings_lower:
+                            return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[potential_number.lower()]}", "lc_view"
                         else:
                             return None, "invalid_ticket_number"
                     else:
                         return None, "invalid_ticket_number"
-
-        # Check for single-word input (search bar case)
-        if len(words) == 1:
-            number = words[0]
-            if self.lc_num_regex.match(number):
-                if number in self.bg_mappings:
-                    return f"{self.dynamic_urls['view_bg']['base_url']}{self.bg_mappings[number]}", "view_bg"
-                elif number in self.lc_mappings_lower:
-                    return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[number]}", "lc_view"
-                else:
-                    return None, "invalid_ticket_number"
 
         # Check for BG number in multi-word input
         for word in words:
@@ -56,9 +56,9 @@ class URLNavigator:
 
         # Check for LC number in multi-word input
         for word in words:
-            if word in self.lc_mappings_lower:
+            if word.lower() in self.lc_mappings_lower:
                 lc_number = word
-                return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[lc_number]}", "lc_view"
+                return f"{self.dynamic_urls['lc_view']['base_url']}{self.lc_mappings_lower[lc_number.lower()]}", "lc_view"
 
         # BG Amendment
         amend_config = self.dynamic_urls.get("bg_amendment", {})
@@ -100,10 +100,10 @@ class URLNavigator:
 
         # LC View with triggers (English and Hindi)
         lc_view_config = self.dynamic_urls.get("lc_view", {})
-        lc_view_triggers = lc_view_config.get("triggers", []) + ["एलसी देखें"]
+        lc_view_triggers = lc_view_config.get("triggers", []) + ["एलसी देखें", "i want to view my lc"]
         lc_view_base_url = lc_view_config.get("base_url")
         for trigger in lc_view_triggers:
-            if trigger in message:
+            if trigger in message.lower():  # Case-insensitive for English triggers
                 if "lc" in words or "एलसी" in words:
                     lc_idx = words.index("lc") if "lc" in words else words.index("एलसी")
                     if lc_idx + 1 < len(words) and words[lc_idx + 1] not in ["is", "was", "a", "and", "the", "है"]:
@@ -116,6 +116,8 @@ class URLNavigator:
                     is_idx = words.index("is") if "is" in words else words.index("है")
                     if is_idx + 1 < len(words):
                         lc_number = words[is_idx + 1]
+                elif trigger == "i want to view my lc" and len(words) > 5:  # Check for LC number after "i want to view my lc"
+                    lc_number = words[-1]  # Assume last word is the LC number
                 if not lc_number and words[-1] not in ["lc", "एलसी", "is", "है", "was", "a", "and", "the", "on", "this"]:
                     lc_number = words[-1]
                 if lc_number and self.lc_num_regex.match(lc_number):
@@ -131,18 +133,31 @@ class URLNavigator:
         bg_file_config = self.dynamic_urls.get("bg_creation_with_file", {})
         bg_file_triggers = bg_file_config.get("triggers", []) + [
             "create bg with file", "i want to create a new bg",
-            "मैं एक नया बीजी बनाना चाहता हूँ", "नया बीजी बनाएं", "मैं एक नया बीजी बनाना चाहता हूँ", "मैं एक नया बिजी बनाना चाहता हूं"
+            "मैं एक नया बीजी बनाना चाहता हूँ", "नया बीजी बनाएं", "मैं एक नया बिजी बनाना चाहता हूं", "यह फाइल को लेकर एक नया बिजी बनाया", "मुझे एक नया बिजी बना कर दो"
         ]
-        bg_file_base_url = bg_file_config.get("base_url")  # Set to http://127.0.0.1:7443/surematch/api/processBgfile in config
+        bg_file_base_url = bg_file_config.get("base_url")
         for trigger in bg_file_triggers:
-            if trigger in message.lower():  # Case-insensitive for English, Hindi already handled
+            if trigger in message.lower():
                 if context and context.get("has_uploaded_file"):
                     return bg_file_base_url, "bg_creation_with_file"
                 return None, "bg_creation_no_file"
 
-        # LC Creation (English and Hindi triggers)
+        # # LC Creation with File (English and Hindi triggers)
+        # lc_file_config = self.dynamic_urls.get("lc_creation_with_file", {})
+        # lc_file_triggers = lc_file_config.get("triggers", []) + [
+        #     "create lc with file", "i want to create a new lc",
+        #     "मैं एक नया एलसी बनाना चाहता हूँ", "नया एलसी बनाएं"
+        # ]
+        # lc_file_base_url = lc_file_config.get("base_url")
+        # for trigger in lc_file_triggers:
+        #     if trigger in message.lower():
+        #         if context and context.get("has_uploaded_file"):
+        #             return lc_file_base_url, "lc_creation_with_file"
+        #         return None, "lc_creation_no_file"
+
+        # LC Creation without file (English and Hindi triggers)
         lc_create_config = self.dynamic_urls.get("lc_creation", {})
-        lc_create_triggers = lc_create_config.get("triggers", []) + ["मैं एक नया एलसी बनाना चाहता हूँ", "नया एलसी बनाएं"]
+        lc_create_triggers = lc_create_config.get("triggers", []) + ["मैं एक नया एलसी बनाना चाहता हूँ", "नया एलसी बनाएं", "मैं एक नया लक बनाना चाहता हूं","नया लक बनाएं", "नया लक बनाया"]
         lc_create_base_url = lc_create_config.get("base_url")
         for trigger in lc_create_triggers:
             if trigger in message:
@@ -176,6 +191,9 @@ class URLNavigator:
 
         if context and context.get("has_uploaded_file") and ("bg" in message or "बीजी" in message):
             return bg_file_base_url, "bg_creation_with_file"
+
+        # if context and context.get("has_uploaded_file") and ("lc" in message or "एलसी" in message):
+        #     return lc_file_base_url, "lc_creation_with_file"
 
         if "bg" in message or "bank guarantee" in message or "बीजी" in message:
             return None, "bg_suggestion"

@@ -1,7 +1,7 @@
 import ollama
 
 class OllamaClient:
-    def __init__(self, model_name="Zingo"):  # Changed model name to "jingo"
+    def __init__(self, model_name="Zingo"):  # Changed model name to "Zingo"
         self.model = model_name
         # Map "Zingo" to the actual model on Hugging Face
         self.actual_model = "hf.co/Qwen/Qwen2.5-3B-Instruct-GGUF:Q4_K_M"

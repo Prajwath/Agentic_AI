@@ -267,309 +267,381 @@
             <p><strong>Zingo:</strong> Hey! Good to see you. What’s up today?</p>
          </div>
       </div>
-      <div class="info_dropdown" id="info-dropdown">
-         <div>
-            <ul>
-               <li onclick="showImportList()">Import</li>
-               <li onclick="showExportList()">Export</li>
-               <li>Letter of Credit</li>
-               <li>Bank Guarantee</li>
-               <li onclick="showOutwardList()">Outward Remittance</li>
-               <li onclick="showInwardList()">Inward Remittance</li>
-               <li onclick="showCapitalList()">Capital Account</li>
-               <li onclick="showForexList()">Forex</li>
-            </ul>
-         </div>
       </div>
-      <div id="import-list" class="info_dropdown__import hidden">
-         <p>Import</p>
-         <ul>
-            <li>Other Bank BOE (Bill Utilisation)</li>
-            <li>GT / PO</li>
-            <li>DRUL</li>
-            <li>Document Return</li>
-            <li>AD Transfer & Pay</li>
-            <li>Buyer Credit – Roll over</li>
-            <li>Buyer Credit – Repayment</li>
-            <li>Quote Management</li>
-            <li>Merchant Trade</li>
-            <li>Bill Acceptance</li>
-            <li>Bill Payment</li>
-            <li>BOE Settlement</li>
-            <li>Buyer Credit</li>
-            <li>IDPMS Payment</li>
-         </ul>
-      </div>
-      <div id="export-list" class="info_dropdown__import hidden">
-         <p class="list__p">Export</p>
-         <ul>
-            <li>EDPMS - Bill Blocking</li>
-            <li>EDPMS - Bill Regularization</li>
-            <li>Export Bill Dispatch</li>
-            <li>Export Bill Reconciliation</li>
-            <li>Bill Discounting</li>
-            <li>IDPMS</li>
-            <li>Service Expert</li>
-            <li>Extension of Invoice</li>
-            <li>Document Tracking</li>
-            <li>EEFC conversion</li>
-            <li>Pre Shipment Loan</li>
-            <li>GR Waiver</li>
-            <li>GR Closer</li>
-            <li>Software Export Life Cycle</li>
-         </ul>
-      </div>
-      <div id="lc-list" class="info_dropdown__import hidden">
-         <p class="list__p">LC</p>
-         <ul>
-            <li>Issuance</li>
-            <li>Cancellation</li>
-            <li>Amendments</li>
-            <li>Advising</li>
-            <li>Wooqer</li>
-            <li>Retail LC</li>
-            <li>LC Utility</li>
-         </ul>
-      </div>
-      <div id="bg-list" class="info_dropdown__import hidden">
-         <p class="list__p">BG</p>
-         <ul>
-            <li>BG issuance</li>
-            <li>BG vetting</li>
-            <li>BG amendment</li>
-            <li>BG cancellation</li>
-            <li>BG innovation</li>
-            <li>BG utility and Wooqer</li>
-            <li>BG confirmation</li>
-         </ul>
-      </div>
-      <div id="outward-list" class="info_dropdown__import hidden">
-         <p class="list__p">Outward Remittance</p>
-         <ul>
-            <li>A1 Remittance</li>
-            <li>A2 Remittance</li>
-            <li>Agency commission</li>
-            <li>BOE mapping</li>
-            <li>Swift GPT</li>
-            <li>ODI/FDI Remittance mapping</li>
-            <li>EDPMS Mapping agency commission</li>
-         </ul>
-      </div>
-      <div id="inward-list" class="info_dropdown__import hidden">
-         <p class="list__p">Inward Remittance</p>
-         <ul>
-            <li>Disposal for exports MT 202</li>
-            <li>Disposal for Non-exports MT 103</li>
-            <li>Shipping bill regulation</li>
-            <li>FX rates</li>
-            <li>FD/ODI linkage</li>
-         </ul>
-      </div>
-      <div id="capital-list" class="info_dropdown__import hidden">
-         <p class="list__p">Capital Account</p>
-         <ul>
-            <li>ODI</li>
-            <li>FDI</li>
-            <li>ECB</li>
-            <li>LO/PO/BO</li>
-            <li>OBR</li>
-            <li>Commodity hedging</li>
-            <li>RBI Pravaah</li>
-            <li>IRM and ORM Management</li>
-            <li>Document Submission Dashboard</li>
-            <li>Fee/late Submission Collection</li>
-         </ul>
-      </div>
-      <div id="forex-list" class="info_dropdown__import hidden">
-         <p class="list__p">ForeX</p>
-         <ul>
-            <li>FX confirmation</li>
-            <li>FX underlying submission</li>
-            <li>Online Rate Booking</li>
-            <li>Shipping bill and BOE linkage for underlying</li>
-            <li>Acceptance and Refusal</li>
-         </ul>
-      </div>
-   </div>
+<!--      <div class="info_dropdown" id="info-dropdown">-->
+<!--         <div>-->
+<!--            <ul>-->
+<!--               <li onclick="showImportList()">Import</li>-->
+<!--               <li onclick="showExportList()">Export</li>-->
+<!--               <li>Letter of Credit</li>-->
+<!--               <li>Bank Guarantee</li>-->
+<!--               <li onclick="showOutwardList()">Outward Remittance</li>-->
+<!--               <li onclick="showInwardList()">Inward Remittance</li>-->
+<!--               <li onclick="showCapitalList()">Capital Account</li>-->
+<!--               <li onclick="showForexList()">Forex</li>-->
+<!--            </ul>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--      <div id="import-list" class="info_dropdown__import hidden">-->
+<!--         <p>Import</p>-->
+<!--         <ul>-->
+<!--            <li>Other Bank BOE (Bill Utilisation)</li>-->
+<!--            <li>GT / PO</li>-->
+<!--            <li>DRUL</li>-->
+<!--            <li>Document Return</li>-->
+<!--            <li>AD Transfer & Pay</li>-->
+<!--            <li>Buyer Credit – Roll over</li>-->
+<!--            <li>Buyer Credit – Repayment</li>-->
+<!--            <li>Quote Management</li>-->
+<!--            <li>Merchant Trade</li>-->
+<!--            <li>Bill Acceptance</li>-->
+<!--            <li>Bill Payment</li>-->
+<!--            <li>BOE Settlement</li>-->
+<!--            <li>Buyer Credit</li>-->
+<!--            <li>IDPMS Payment</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="export-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">Export</p>-->
+<!--         <ul>-->
+<!--            <li>EDPMS - Bill Blocking</li>-->
+<!--            <li>EDPMS - Bill Regularization</li>-->
+<!--            <li>Export Bill Dispatch</li>-->
+<!--            <li>Export Bill Reconciliation</li>-->
+<!--            <li>Bill Discounting</li>-->
+<!--            <li>IDPMS</li>-->
+<!--            <li>Service Expert</li>-->
+<!--            <li>Extension of Invoice</li>-->
+<!--            <li>Document Tracking</li>-->
+<!--            <li>EEFC conversion</li>-->
+<!--            <li>Pre Shipment Loan</li>-->
+<!--            <li>GR Waiver</li>-->
+<!--            <li>GR Closer</li>-->
+<!--            <li>Software Export Life Cycle</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="lc-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">LC</p>-->
+<!--         <ul>-->
+<!--            <li>Issuance</li>-->
+<!--            <li>Cancellation</li>-->
+<!--            <li>Amendments</li>-->
+<!--            <li>Advising</li>-->
+<!--            <li>Wooqer</li>-->
+<!--            <li>Retail LC</li>-->
+<!--            <li>LC Utility</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="bg-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">BG</p>-->
+<!--         <ul>-->
+<!--            <li>BG issuance</li>-->
+<!--            <li>BG vetting</li>-->
+<!--            <li>BG amendment</li>-->
+<!--            <li>BG cancellation</li>-->
+<!--            <li>BG innovation</li>-->
+<!--            <li>BG utility and Wooqer</li>-->
+<!--            <li>BG confirmation</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="outward-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">Outward Remittance</p>-->
+<!--         <ul>-->
+<!--            <li>A1 Remittance</li>-->
+<!--            <li>A2 Remittance</li>-->
+<!--            <li>Agency commission</li>-->
+<!--            <li>BOE mapping</li>-->
+<!--            <li>Swift GPT</li>-->
+<!--            <li>ODI/FDI Remittance mapping</li>-->
+<!--            <li>EDPMS Mapping agency commission</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="inward-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">Inward Remittance</p>-->
+<!--         <ul>-->
+<!--            <li>Disposal for exports MT 202</li>-->
+<!--            <li>Disposal for Non-exports MT 103</li>-->
+<!--            <li>Shipping bill regulation</li>-->
+<!--            <li>FX rates</li>-->
+<!--            <li>FD/ODI linkage</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="capital-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">Capital Account</p>-->
+<!--         <ul>-->
+<!--            <li>ODI</li>-->
+<!--            <li>FDI</li>-->
+<!--            <li>ECB</li>-->
+<!--            <li>LO/PO/BO</li>-->
+<!--            <li>OBR</li>-->
+<!--            <li>Commodity hedging</li>-->
+<!--            <li>RBI Pravaah</li>-->
+<!--            <li>IRM and ORM Management</li>-->
+<!--            <li>Document Submission Dashboard</li>-->
+<!--            <li>Fee/late Submission Collection</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--      <div id="forex-list" class="info_dropdown__import hidden">-->
+<!--         <p class="list__p">ForeX</p>-->
+<!--         <ul>-->
+<!--            <li>FX confirmation</li>-->
+<!--            <li>FX underlying submission</li>-->
+<!--            <li>Online Rate Booking</li>-->
+<!--            <li>Shipping bill and BOE linkage for underlying</li>-->
+<!--            <li>Acceptance and Refusal</li>-->
+<!--         </ul>-->
+<!--      </div>-->
+<!--   </div>-->
    <script>
-      $(document).ready(function() {
-         let languagePreference = 'auto'; // Default to dynamic detection
-         $('#chat-submit').click(function() {
+   $(document).ready(function() {
+      let languagePreference = 'auto'; // Default to dynamic detection
+
+      // Chat input submission handler
+      $('#chat-submit').click(function() {
+         sendMessage();
+      });
+
+      $('#chat-input').keypress(function(e) {
+         if (e.which == 13) {
             sendMessage();
-         });
-         $('#chat-input').keypress(function(e) {
-            if (e.which == 13) {
-               sendMessage();
-            }
-         });
-         function sendMessage() {
-            var message = $('#chat-input').val().trim();
-            if (!message) return;
-            $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
-            $('#chat-input').val('');
-            processRequest(message);
-         }
-         $('#bg-amendment-submit').click(function() {
-            sendBgAmendment();
-         });
-         $('#bg-amendment-input').keypress(function(e) {
-            if (e.which == 13) {
-               sendBgAmendment();
-            }
-         });
-         function sendBgAmendment() {
-            var bgNumber = $('#bg-amendment-input').val().trim();
-            if (!bgNumber) return;
-            var message = 'amend BG ' + bgNumber;
-            $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
-            $('#bg-amendment-input').val('');
-            processRequest(message);
-         }
-         $('#lc-amendment-submit').click(function() {
-            sendLcAmendment();
-         });
-         $('#lc-amendment-input').keypress(function(e) {
-            if (e.which == 13) {
-               sendLcAmendment();
-            }
-         });
-         function sendLcAmendment() {
-            var lcNumber = $('#lc-amendment-input').val().trim();
-            if (!lcNumber) return;
-            var message = lcNumber; // Directly use LC number to trigger lc_view
-            $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
-            $('#lc-amendment-input').val('');
-            processRequest(message);
-         }
-         $('#bg-upload-btn').click(function() {
-            $('#bg-upload-file').click();
-         });
-         $('#bg-upload-file').change(function() {
-            var file = this.files[0];
-            if (!file) return;
-            $('#bg-upload-input').val(file.name);
-            var formData = new FormData();
-            formData.append('file', file);
-            $.ajax({
-               url: "{% url 'chat' %}",
-               method: 'POST',
-               data: formData,
-               contentType: false,
-               processData: false,
-               headers: { 'X-CSRFToken': '{{ csrf_token }}' },
-               success: function(data) {
-                  $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
-                  $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
-               },
-               error: function(xhr) {
-                  $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
-               }
-            });
-         });
-         // Speech Recognition
-         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-         recognition.continuous = false;
-         recognition.interimResults = false;
-         $('#mic-btn').click(function() {
-            recognition.lang = languagePreference === 'hindi' ? 'hi-IN' : 'en-US';
-            $('#mic-btn').html('<i class="fa-regular fa-microphone" style="color: red;"></i>');
-            recognition.start();
-         });
-         recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript;
-            $('#chat-input').val(transcript);
-            $('#chat-output').append('<p><strong>You (Speech):</strong> ' + transcript + '</p>');
-            $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
-            processRequest(transcript);
-         };
-         recognition.onerror = function(event) {
-            $('#chat-output').append('<p><strong>Error:</strong> Speech recognition error: ' + event.error + '</p>');
-            $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
-         };
-         recognition.onend = function() {
-            $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
-         };
-         // Language Toggle
-         $('#lang-toggle-btn').click(function() {
-            if (languagePreference === 'auto' || languagePreference === 'english') {
-               languagePreference = 'hindi';
-               $('#lang-toggle-btn').text('Hindi');
-               $('#chat-input').attr('placeholder', 'हाय, मैं जिंगो हूँ—आपका दोस्त! बोलें या टाइप करें!');
-               $('#chat-output').html('<p><strong>Zingo:</strong> नमस्ते! आपसे मिलकर अच्छा लगा। आज क्या करना चाहते हैं?</p>');
-            } else {
-               languagePreference = 'english';
-               $('#lang-toggle-btn').text('English');
-               $('#chat-input').attr('placeholder', 'Hi, I’m Zingo—your buddy! Speak or type!');
-               $('#chat-output').html('<p><strong>Zingo:</strong> Hi! Good to see you. What’s up today?</p>');
-            }
-            $.ajax({
-               url: "{% url 'chat' %}",
-               method: 'POST',
-               data: JSON.stringify({ message: 'set_language_' + languagePreference }),
-               contentType: 'application/json',
-               headers: { 'X-CSRFToken': '{{ csrf_token }}' },
-               success: function(data) {
-                  console.log('Language preference updated');
-               }
-            });
-         });
-         function processRequest(message) {
-            if (message.startsWith('set_language_')) {
-               return; // Handled by toggle
-            }
-            $.ajax({
-               url: "{% url 'chat' %}",
-               method: 'POST',
-               data: JSON.stringify({ message: message }),
-               contentType: 'application/json',
-               headers: { 'X-CSRFToken': '{{ csrf_token }}' },
-               success: function(data) {
-                  $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
-                  if (data.redirect) {
-                     if (data.process_file) {
-                        showFileProcessingProgress(data.url);
-                     } else {
-                        showProgressBar(data.url);
-                     }
-                  }
-                  $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
-               },
-               error: function(xhr) {
-                  $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
-               }
-            });
-         }
-         function showProgressBar(url) {
-            var progressBar = '<div id="progress-bar" class="progress mt-2">' +
-                              '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%"></div>' +
-                              '</div>';
-            $('#chat-output').append(progressBar);
-            $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
-            var width = 0;
-            var interval = setInterval(function() {
-               width += 20;
-               $('#progress-bar .progress-bar').css('width', width + '%');
-               if (width >= 100) {
-                  clearInterval(interval);
-                  setTimeout(function() {
-                     $('#progress-bar').remove();
-                     window.open(url, '_blank');
-                  }, 500);
-               }
-            }, 500);
-         }
-         function showFileProcessingProgress(initialUrl) {
-            var progressBar = '<div id="progress-bar" class="progress mt-2">' +
-                              '<div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%"></div>' +
-                              '</div>';
-            $('#chat-output').append(progressBar);
-            $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
-            setTimeout(function() {
-               $('#progress-bar').remove();
-               window.open(initialUrl, '_blank');
-            }, 5000); // Adjust based on API response time
          }
       });
-   </script>
+
+      function sendMessage() {
+         var message = $('#chat-input').val().trim();
+         if (!message) return;
+
+         // Append user message to chat output
+         $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+         $('#chat-input').val('');
+         processRequest(message);
+      }
+
+      // BG Amendment submission handler
+      $('#bg-amendment-submit').click(function() {
+         sendBgAmendment();
+      });
+
+      $('#bg-amendment-input').keypress(function(e) {
+         if (e.which == 13) {
+            sendBgAmendment();
+         }
+      });
+
+      function sendBgAmendment() {
+         var bgNumber = $('#bg-amendment-input').val().trim();
+         if (!bgNumber) return;
+
+         var message = 'amend BG ' + bgNumber;
+         $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+         $('#bg-amendment-input').val('');
+         processRequest(message);
+      }
+
+      // LC Amendment submission handler
+      $('#lc-amendment-submit').click(function() {
+         sendLcAmendment();
+      });
+
+      $('#lc-amendment-input').keypress(function(e) {
+         if (e.which == 13) {
+            sendLcAmendment();
+         }
+      });
+
+      function sendLcAmendment() {
+         var lcNumber = $('#lc-amendment-input').val().trim();
+         if (!lcNumber) return;
+
+         var message = lcNumber; // Directly use LC number to trigger lc_view
+         $('#chat-output').append('<p><strong>You:</strong> ' + message + '</p>');
+         $('#lc-amendment-input').val('');
+         processRequest(message);
+      }
+
+      // File upload handler for BG text
+      $('#bg-upload-btn').click(function() {
+         $('#bg-upload-file').click();
+      });
+
+      $('#bg-upload-file').change(function() {
+         var file = this.files[0];
+         if (!file) return;
+
+         $('#bg-upload-input').val(file.name);
+         var formData = new FormData();
+         formData.append('file', file);
+
+         $.ajax({
+            url: "{% url 'chat' %}",
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+            success: function(data) {
+               $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
+               $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+            },
+            error: function(xhr) {
+               $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
+            }
+         });
+      });
+
+      // Speech Recognition
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      $('#mic-btn').click(function() {
+         recognition.lang = languagePreference === 'hindi' ? 'hi-IN' : 'en-US';
+         $('#mic-btn').html('<i class="fa-regular fa-microphone" style="color: red;"></i>');
+         recognition.start();
+      });
+
+      recognition.onresult = function(event) {
+         const transcript = event.results[0][0].transcript;
+         $('#chat-input').val(transcript);
+         $('#chat-output').append('<p><strong>You (Speech):</strong> ' + transcript + '</p>');
+         $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+         processRequest(transcript);
+      };
+
+      recognition.onerror = function(event) {
+         $('#chat-output').append('<p><strong>Error:</strong> Speech recognition error: ' + event.error + '</p>');
+         $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+      };
+
+      recognition.onend = function() {
+         $('#mic-btn').html('<i class="fa-regular fa-microphone"></i>');
+      };
+
+      // Language Toggle
+      $('#lang-toggle-btn').click(function() {
+         if (languagePreference === 'auto' || languagePreference === 'english') {
+            languagePreference = 'hindi';
+            $('#lang-toggle-btn').text('Hindi');
+            $('#chat-input').attr('placeholder', 'हाय, मैं जिंगो हूँ—आपका दोस्त! बोलें या टाइप करें!');
+            $('#chat-output').html('<p><strong>Zingo:</strong> नमस्ते! आपसे मिलकर अच्छा लगा। आज क्या करना चाहते हैं?</p>');
+         } else {
+            languagePreference = 'english';
+            $('#lang-toggle-btn').text('English');
+            $('#chat-input').attr('placeholder', 'Hi, I’m Zingo—your buddy! Speak or type!');
+            $('#chat-output').html('<p><strong>Zingo:</strong> Hi! Good to see you. What’s up today?</p>');
+         }
+
+         $.ajax({
+            url: "{% url 'chat' %}",
+            method: 'POST',
+            data: JSON.stringify({ message: 'set_language_' + languagePreference }),
+            contentType: 'application/json',
+            headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+            success: function(data) {
+               console.log('Language preference updated');
+            }
+         });
+      });
+
+      // AJAX request to process user input
+      function processRequest(message) {
+         if (message.startsWith('set_language_')) {
+            return; // Handled by toggle
+         }
+
+         $.ajax({
+            url: "{% url 'chat' %}",
+            method: 'POST',
+            data: JSON.stringify({ message: message }),
+            contentType: 'application/json',
+            headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+            success: function(data) {
+               $('#chat-output').append('<p><strong>Zingo:</strong> ' + data.response + '</p>');
+
+               if (data.redirect) {
+                  if (data.process_file) {
+                     showFileProcessingProgress(data.url);
+                  } else {
+                     showProgressBar(data.url);
+                  }
+               }
+
+               $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+            },
+            error: function(xhr) {
+               $('#chat-output').append('<p><strong>Error:</strong> ' + xhr.statusText + '</p>');
+            }
+         });
+      }
+
+      // Progress bar for redirection
+      function showProgressBar(url) {
+         var progressBar = '<div id="progress-bar" class="progress mt-2">' +
+                           '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%"></div>' +
+                           '</div>';
+         $('#chat-output').append(progressBar);
+         $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+
+         var width = 0;
+         var interval = setInterval(function() {
+            width += 20;
+            $('#progress-bar .progress-bar').css('width', width + '%');
+
+            if (width >= 100) {
+               clearInterval(interval);
+               setTimeout(function() {
+                  $('#progress-bar').remove();
+                  window.open(url, '_blank');
+               }, 500);
+            }
+         }, 500);
+      }
+
+      // Progress bar for file processing
+      function showFileProcessingProgress(initialUrl) {
+         var progressBar = '<div id="progress-bar" class="progress mt-2">' +
+                           '<div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%"></div>' +
+                           '</div>';
+         $('#chat-output').append(progressBar);
+         $('#chat-output').scrollTop($('#chat-output')[0].scrollHeight);
+
+         setTimeout(function() {
+            $('#progress-bar').remove();
+            window.open(initialUrl, '_blank');
+         }, 5000); // Adjust based on API response time
+      }
+
+      // Dropdown menu handlers
+      function showImportList() {
+         toggleDropdown('import-list');
+      }
+
+      function showExportList() {
+         toggleDropdown('export-list');
+      }
+
+      function showOutwardList() {
+         toggleDropdown('outward-list');
+      }
+
+      function showInwardList() {
+         toggleDropdown('inward-list');
+      }
+
+      function showCapitalList() {
+         toggleDropdown('capital-list');
+      }
+
+      function showForexList() {
+         toggleDropdown('forex-list');
+      }
+
+      function toggleDropdown(id) {
+         $('.info_dropdown__import').addClass('hidden');
+         $('#' + id).removeClass('hidden');
+      }
+   });
+</script>
+
 </body>
 </html>

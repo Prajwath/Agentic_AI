@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // Toggle Info Dropdown
     const infoIcon = document.getElementById("info-icon");
@@ -18,5 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.classList.toggle("open");
         });
     }
+
+
+    const inputField = document.querySelector(".search-bar");
+
+    const placeholderCarousel = document.querySelector(".placeholder-carousel");
+
+    inputField.addEventListener("input", function () {
+
+        if (inputField.value.trim() !== "") {
+
+            placeholderCarousel.classList.add("placeholder-hidden");
+
+        } else {
+
+            placeholderCarousel.classList.remove("placeholder-hidden");
+
+        }
+
+    });
 
 });
